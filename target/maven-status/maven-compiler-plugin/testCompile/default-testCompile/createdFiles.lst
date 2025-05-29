@@ -1,0 +1,6 @@
+br\com\erudio\services\PersonServicesTest.class
+br\com\erudio\StartupTests.class
+br\com\erudio\unitetests\mapper\ObjectMapperTests.class
+br\com\erudio\unitetests\mapper\mocks\MockBook.class
+br\com\erudio\unitetests\mapper\mocks\MockPerson.class
+br\com\erudio\services\BookServicesTest.class

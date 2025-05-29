@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: br.com.erudio.services.BookServicesTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.644 s <<< FAILURE! -- in br.com.erudio.services.BookServicesTest
+br.com.erudio.services.BookServicesTest.create -- Time elapsed: 0.136 s <<< ERROR!
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'save' method:
+    repository.save(
+    br.com.erudio.model.Book@ac577fe6
+);
+    -> at br.com.erudio.services.BookServices.create(BookServices.java:56)
+ - has following stubbing(s) with different arguments:
+    1. repository.save(
+    br.com.erudio.model.Book@ac5783a7
+);
+      -> at br.com.erudio.services.BookServicesTest.create(BookServicesTest.java:102)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at br.com.erudio.services.BookServices.create(BookServices.java:56)
+	at br.com.erudio.services.BookServicesTest.create(BookServicesTest.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
