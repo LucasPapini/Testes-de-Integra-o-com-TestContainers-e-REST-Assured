@@ -19,7 +19,7 @@ public class PersonController implements PersonControllerDocs {
     @Autowired
     private PersonServices service;
 
-    @CrossOrigin(origins = {"http://localhost:8080"})
+    //@CrossOrigin(origins = {"http://localhost:8080"})
     @GetMapping(produces = {
             MediaType.APPLICATION_JSON_VALUE,
             MediaType.APPLICATION_XML_VALUE,
@@ -29,7 +29,7 @@ public class PersonController implements PersonControllerDocs {
         return service.findAll();
     }
 
-    @CrossOrigin(origins = {"http://localhost:8080", "http://lucaspapini.tech/"})
+    //@CrossOrigin(origins = {"http://localhost:8080", "http://lucaspapini.tech/"})
     @GetMapping(value = "/{id}",
             produces = {
                     MediaType.APPLICATION_JSON_VALUE,
